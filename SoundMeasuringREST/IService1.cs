@@ -15,12 +15,12 @@ namespace SoundMeasuringREST
 
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "GetAllfeedback/")]
+            UriTemplate = "GetAllMeasurments/")]
         IList<Measurments> GetAllMeasurments();
 
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "feedback/{id}")]
+            UriTemplate = "Measurments/{id}")]
         Measurments GetMeasurments(string id);
 
 
