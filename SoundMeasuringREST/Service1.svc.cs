@@ -14,7 +14,7 @@ namespace SoundMeasuringREST
     public class Service1 : IService1
     {
         private string constr =
-            "Server=tcp:davids-sql-server.database.windows.net,1433;Initial Catalog = Davids sql server; Persist Security Info=False;User ID = { your_username }; Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;";
+            "Server=tcp:davids-sql-server.database.windows.net,1433;Initial Catalog=Davids sql server;Persist Security Info=False;User ID=davidmalmberg;Password=Dak/Tha12;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public IList<Measurments> GetAllMeasurments()
         {
@@ -33,7 +33,7 @@ namespace SoundMeasuringREST
 
                     noise.ID = reader.GetInt32(0);
                     noise.DECIBEL = reader.GetInt32(0);
-                    noise.DATE = reader.GetDateTime(0);
+                    noise.DATE = reader.GetDateTime(1);
 
                     measurmentList.Add(noise);
 
