@@ -18,10 +18,10 @@ namespace SoundMeasuringREST
             UriTemplate = "GetAllMeasurments/")]
         IList<Measurments> GetAllMeasurments();
 
-        [OperationContract]
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "Measurments/{id}")]
-        Measurments GetMeasurments(string id);
+        //[OperationContract]
+        //[WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
+        //    UriTemplate = "Measurments/{id}")]
+        //Measurments GetMeasurments(string id);
 
 
 

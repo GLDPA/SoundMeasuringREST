@@ -10,22 +10,22 @@ namespace SoundMeasuringREST
     public class Measurments
     {
         [DataMember]
-        public int ID { get; set; }
+        public int Id { get; set; }
         [DataMember]
-        public double DECIBEL { get; set; }
+        public double Temperature { get; set; }
         [DataMember]
-        public DateTime DATE { get; set; }
+        public string Date { get; set; }
 
         public Measurments()
         {
             
         }
 
-        public Measurments(int id, double decibel, DateTime date)
+        public Measurments(int id, double temperature, string date)
         {
-            ID = id;
-            DECIBEL = decibel;
-            DATE = date;
+            Id = id;
+            Temperature = temperature;
+            Date = date;
         }
 
 

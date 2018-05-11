@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Dapper;
 
 namespace SoundMeasuringREST
 {
@@ -18,66 +20,46 @@ namespace SoundMeasuringREST
 
         public IList<Measurments> GetAllMeasurments()
         {
-            SqlConnection con = new SqlConnection(constr);
-            con.Open();
+            string sqlQuery = "SELECT * FROM Measurments";
 
-            SqlCommand GetAllElements = new SqlCommand("SELECT * FROM [dbo].[Measurments]", con);
-
-            SqlDataReader reader = GetAllElements.ExecuteReader();
-            List<Measurments> measurmentList = new List<Measurments>();
-            if (reader.HasRows)
+            using (IDbConnection tempMeasurement = new SqlConnection(constr))
             {
-                while (reader.Read())
-                {
-                    Measurments noise = new Measurments();
-
-                    noise.ID = reader.GetInt32(0);
-                    noise.DECIBEL = reader.GetInt32(0);
-                    noise.DATE = reader.GetDateTime(1);
-
-                    measurmentList.Add(noise);
-
-                }
+                var tempList = tempMeasurement.Query<Measurments>(sqlQuery).ToList();
+                return tempList;
             }
-
-            con.Close();
-            return measurmentList;
-
-
-
-
+           
         }
 
-        public Measurments GetMeasurments(string id)
-        {
+        //public Measurments GetMeasurments(string id)
+        //{
 
-            SqlConnection con = new SqlConnection(constr);
-            con.Open();
+        //    SqlConnection con = new SqlConnection(constr);
+        //    con.Open();
 
-            SqlCommand GetAllElements = new SqlCommand($"SELECT * FROM [dbo].[Measurments] WHERE id = {id}", con);
-            SqlDataReader reader = GetAllElements.ExecuteReader();
+        //    SqlCommand GetAllElements = new SqlCommand($"SELECT * FROM [dbo].[Measurments] WHERE id = {id}", con);
+        //    SqlDataReader reader = GetAllElements.ExecuteReader();
 
-            Measurments noise = new Measurments();
+        //    Measurments noise = new Measurments();
 
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    noise.ID = reader.GetInt32(0);
-                    noise.DECIBEL = reader.GetInt32(0);
-                    noise.DATE = reader.GetDateTime(0);
+        //    if (reader.HasRows)
+        //    {
+        //        while (reader.Read())
+        //        {
+        //            noise.Id = reader.GetInt32(0);
+        //            noise.Temperature = reader.GetInt32(0);
+        //            noise.Date = reader.GetString(0);
 
                     
 
 
-                }
+        //        }
 
 
 
-            }
-            con.Close();
-            return noise;
-        }
+        //    }
+        //    con.Close();
+        //    return noise;
+        //}
 
         
     }
