@@ -1,0 +1,7 @@
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\bin\SoundMeasuringREST.dll.config
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\bin\SoundMeasuringREST.dll
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\bin\SoundMeasuringREST.pdb
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csprojResolveAssemblyReference.cache
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CoreCompileInputs.cache
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.dll
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.pdb
