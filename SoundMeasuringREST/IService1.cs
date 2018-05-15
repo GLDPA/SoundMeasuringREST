@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
@@ -29,7 +30,10 @@ namespace SoundMeasuringREST
 
 
 
-
+        [OperationContract]
+        [WebInvoke(Method = "DELETE", ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "Delete/")]
+        bool DeleteMeasurements(Measurments measurment);
 
     }
 }

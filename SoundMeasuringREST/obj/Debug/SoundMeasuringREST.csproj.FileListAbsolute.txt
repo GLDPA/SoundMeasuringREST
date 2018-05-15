@@ -5,3 +5,6 @@ C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST
 C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CoreCompileInputs.cache
 C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.dll
 C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.pdb
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\bin\Dapper.dll
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\bin\Dapper.xml
+C:\Users\sels1\source\repos\Soundmeasuring\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CopyComplete

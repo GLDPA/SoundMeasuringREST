@@ -49,6 +49,26 @@ namespace SoundMeasuringREST
         }
 
 
+        public bool DeleteMeasurements(Measurments measurment)
+        {
+            using (var sqlconnection = new SqlConnection(constr))
+            {
+                string sqlquery = $"DELETE FROM Measurments WHERE Id = @Id";
+                using (SqlCommand commandsql = new SqlCommand(sqlquery, sqlconnection))
+                {
+                    commandsql.Parameters.AddWithValue("@Id",  measurment.Id);
+                    sqlconnection.Open();
+                    int resualt = commandsql.ExecuteNonQuery();
+                    if (resualt < 0)
+                    {
+                        Console.WriteLine("ERROR!");
+                    }
+
+                    return true;
+                }
+            }
+        }
+
 
         //public Measurments GetMeasurments(string id)
         //{
