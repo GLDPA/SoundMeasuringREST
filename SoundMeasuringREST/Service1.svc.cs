@@ -32,7 +32,7 @@ namespace SoundMeasuringREST
 
         public bool DeleteMeasurements(Measurments measurment)
         {
-            using (var sqlconnection = new SqlConnection())
+            using (var sqlconnection = new SqlConnection(constr))
             {
                 string sqlquery = $"DELETE FROM Measurments WHERE Id = @Id";
                 using (SqlCommand commandsql = new SqlCommand(sqlquery, sqlconnection))
