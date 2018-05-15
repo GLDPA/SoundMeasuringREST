@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,6 +8,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.UI.WebControls;
 using Dapper;
 
 namespace SoundMeasuringREST
@@ -27,8 +29,26 @@ namespace SoundMeasuringREST
                 var tempList = tempMeasurement.Query<Measurments>(sqlQuery).ToList();
                 return tempList;
             }
-           
+
         }
+
+        public double GetAverage()
+        {
+            var m = GetAllMeasurments();
+            double avg = 0;
+            double sum = 0;
+
+
+            foreach (var temp in GetAllMeasurments())
+            {
+                sum = sum + temp.Temperature;
+            }
+
+            avg = sum / m.Count;
+            return avg;
+        }
+
+
 
         //public Measurments GetMeasurments(string id)
         //{
@@ -49,7 +69,7 @@ namespace SoundMeasuringREST
         //            noise.Temperature = reader.GetInt32(0);
         //            noise.Date = reader.GetString(0);
 
-                    
+
 
 
         //        }
@@ -61,6 +81,7 @@ namespace SoundMeasuringREST
         //    return noise;
         //}
 
-        
+
+
     }
 }
