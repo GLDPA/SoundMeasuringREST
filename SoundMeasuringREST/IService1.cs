@@ -31,8 +31,8 @@ namespace SoundMeasuringREST
 
         [OperationContract]
         [WebInvoke(Method = "DELETE", ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "Delete/")]
-        bool DeleteMeasurements(Measurments measurment);
+            UriTemplate = "Delete/{id}")]
+        bool DeleteMeasurements(string id);
 
 
 

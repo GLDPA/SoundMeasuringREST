@@ -49,14 +49,14 @@ namespace SoundMeasuringREST
         }
 
 
-        public bool DeleteMeasurements(Measurments measurment)
+        public bool DeleteMeasurements(string id)
         {
             using (var sqlconnection = new SqlConnection(constr))
             {
-                string sqlquery = $"DELETE FROM Measurments WHERE Id = @Id";
+                string sqlquery = $"DELETE FROM Measurments WHERE id = @Id";
                 using (SqlCommand commandsql = new SqlCommand(sqlquery, sqlconnection))
                 {
-                    commandsql.Parameters.AddWithValue("@Id",  measurment.Id);
+                    commandsql.Parameters.AddWithValue("@Id",  id);
                     sqlconnection.Open();
                     int resualt = commandsql.ExecuteNonQuery();
                     if (resualt < 0)
@@ -85,36 +85,7 @@ namespace SoundMeasuringREST
         }
 
 
-        //public Measurments GetMeasurments(string id)
-        //{
-
-        //    SqlConnection con = new SqlConnection(constr);
-        //    con.Open();
-
-        //    SqlCommand GetAllElements = new SqlCommand($"SELECT * FROM [dbo].[Measurments] WHERE id = {id}", con);
-        //    SqlDataReader reader = GetAllElements.ExecuteReader();
-
-        //    Measurments noise = new Measurments();
-
-        //    if (reader.HasRows)
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            noise.Id = reader.GetInt32(0);
-        //            noise.Temperature = reader.GetInt32(0);
-        //            noise.Date = reader.GetString(0);
-
-
-
-
-        //        }
-
-
-
-        //    }
-        //    con.Close();
-        //    return noise;
-        //}
+        
 
 
 
