@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
+using System.Web.SessionState;
 
 namespace SoundMeasuringREST
 {
     public class Global : System.Web.HttpApplication
     {
+
         protected void Application_Start(object sender, EventArgs e)
         {
 
@@ -27,8 +30,6 @@ namespace SoundMeasuringREST
                 HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
                 HttpContext.Current.Response.End();
             }
-
-
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
@@ -50,6 +51,5 @@ namespace SoundMeasuringREST
         {
 
         }
-
     }
 }
