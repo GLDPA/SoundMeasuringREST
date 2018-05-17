@@ -15,17 +15,20 @@ namespace SoundMeasuringREST
         public double Temperature { get; set; }
         [DataMember]
         public string Date { get; set; }
+        [DataMember]
+        public double Average { get; set; }
 
         public Measurments()
         {
             
         }
 
-        public Measurments(int id, double temperature, string date)
+        public Measurments(int id, double temperature, string date, double average)
         {
            // Id = id;
             Temperature = temperature;
             Date = date;
+            Average = average;
         }
 
 
