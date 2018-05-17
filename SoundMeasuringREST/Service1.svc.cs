@@ -69,6 +69,21 @@ namespace SoundMeasuringREST
             }
         }
 
+        public Measurments CurrentMeasurment()
+        {
+            string sqlQuery = "SELECT * FROM Measurments";
+
+            using (IDbConnection tempMeasurement = new SqlConnection(constr))
+            {
+                var tempList = tempMeasurement.Query<Measurments>(sqlQuery).ToList();
+
+               var getCurrentMeasurment = tempList.Count - 1;
+
+                return tempList[getCurrentMeasurment];
+            }
+
+        }
+
 
         //public Measurments GetMeasurments(string id)
         //{

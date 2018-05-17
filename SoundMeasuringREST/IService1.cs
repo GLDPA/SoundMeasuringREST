@@ -23,17 +23,18 @@ namespace SoundMeasuringREST
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "GetAverage/")]
         double GetAverage();
-        //[OperationContract]
-        //[WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
-        //    UriTemplate = "Measurments/{id}")]
-        //Measurments GetMeasurments(string id);
 
-
+        [OperationContract]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "Current/")]
+        Measurments CurrentMeasurment();
 
         [OperationContract]
         [WebInvoke(Method = "DELETE", ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "Delete/")]
         bool DeleteMeasurements(Measurments measurment);
+
+
 
     }
 }
