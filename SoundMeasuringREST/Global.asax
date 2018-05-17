@@ -1,1 +1,1 @@
-﻿
+﻿<%@ Application CodeBehind="Global.asax.cs" Inherits="SoundMeasuringREST.Global" Language="C#" %>
