@@ -13,7 +13,6 @@ C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\Sou
 C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\SoundMeasuringREST.pdb
 C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\Dapper.dll
 C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\Dapper.xml
-C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csprojAssemblyReference.cache
 C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CoreCompileInputs.cache
 C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CopyComplete
 C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.dll
