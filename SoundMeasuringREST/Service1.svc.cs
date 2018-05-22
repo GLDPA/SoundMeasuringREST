@@ -69,30 +69,6 @@ namespace SoundMeasuringREST
             }
         }
 
-        public Measurments UpdateMeasurment(Measurments measurment)
-        {
-            using (var connection = new SqlConnection(constr))
-            {
-                string sqlQuery = $"update Measurments SET @Temperature = Temperature WHERE @Id = Id ";
-
-                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                {
-                    command.Parameters.AddWithValue("@Temperature", measurment.Temperature);
-                    command.Parameters.AddWithValue("@Id", measurment.Id);
-                    
-                    connection.Open();
-
-                    int result = command.ExecuteNonQuery();
-                    if (result < 0)
-                    {
-                        Console.WriteLine("noget vigtigt");
-                    }
-
-                    return measurment;
-                }
-            }
-        }
-
         public Measurments CurrentMeasurment()
         {
             string sqlQuery = "SELECT * FROM Measurments";
