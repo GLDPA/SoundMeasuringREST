@@ -48,6 +48,16 @@ namespace SoundMeasuringREST
             return avg;
         }
 
+        public double GetAverageToday()
+        {
+            throw new NotImplementedException();
+        }
+
+        public double GetAverageWeek()
+        {
+            throw new NotImplementedException();
+        }
+
 
         public bool DeleteMeasurements(string id)
         {
