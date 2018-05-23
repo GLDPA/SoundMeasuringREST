@@ -17,3 +17,4 @@ C:\Users\Peter\Desktop\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeas
 C:\Users\Peter\Desktop\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CopyComplete
 C:\Users\Peter\Desktop\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.dll
 C:\Users\Peter\Desktop\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.pdb
+C:\Users\Peter\Desktop\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csprojResolveAssemblyReference.cache

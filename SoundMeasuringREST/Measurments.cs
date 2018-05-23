@@ -21,9 +21,8 @@ namespace SoundMeasuringREST
             
         }
 
-        public Measurments(int id, double temperature, string date)
+        public Measurments(double temperature, string date)
         {
-           // Id = id;
             Temperature = temperature;
             Date = date;
         }
