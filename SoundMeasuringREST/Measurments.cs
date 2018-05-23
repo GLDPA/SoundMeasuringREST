@@ -9,6 +9,7 @@ namespace SoundMeasuringREST
     [DataContract]
     public class Measurments
     {
+        
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -28,6 +29,6 @@ namespace SoundMeasuringREST
             Date = date;
         }
 
-
+       
     }
 }
