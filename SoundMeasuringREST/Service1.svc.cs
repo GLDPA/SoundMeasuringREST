@@ -57,7 +57,7 @@ namespace SoundMeasuringREST
 
             foreach (var temp in GetAllMeasurments())
             {
-                if (temp.Date = DateTime.Today)
+                if (temp.Date == DateTime.Today)
                 {
                     sum = sum + temp.Temperature;
                 }
@@ -76,7 +76,7 @@ namespace SoundMeasuringREST
 
             foreach (var temp in GetAllMeasurments())
             {
-                if (temp.Date = DateTime.Today.AddDays(-7))
+                if (temp.Date == DateTime.Today.AddDays(-7))
                 {
                      sum = sum + temp.Temperature;
                 }

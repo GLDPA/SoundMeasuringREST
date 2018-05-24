@@ -25,3 +25,13 @@ C:\Users\Dave\Documents\GitHub\wcf-student-AsianDave94\SoundMeasuringREST\SoundM
 C:\Users\Dave\Documents\GitHub\wcf-student-AsianDave94\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CoreCompileInputs.cache
 C:\Users\Dave\Documents\GitHub\wcf-student-AsianDave94\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.dll
 C:\Users\Dave\Documents\GitHub\wcf-student-AsianDave94\SoundMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.pdb
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csprojAssemblyReference.cache
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.dll
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.pdb
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\SoundMeasuringREST.dll.config
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\SoundMeasuringREST.dll
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\SoundMeasuringREST.pdb
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\Dapper.dll
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\bin\Dapper.xml
+C:\Users\pc\Documents\GitHub\TemperatureMeasuringREST\SoundMeasuringREST\obj\Debug\SoundMeasuringREST.csproj.CopyComplete
