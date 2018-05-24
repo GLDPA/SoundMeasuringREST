@@ -8,8 +8,8 @@ namespace SoundMeasuringREST
 {
     [DataContract]
     public class Measurments
-    {
-        
+    {       
+
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -22,13 +22,15 @@ namespace SoundMeasuringREST
             
         }
 
-        public Measurments(int id, double temperature, DateTime date)
-        {
-           // Id = id;
+        public Measurments(double temperature, DateTime date)
+        {           
             Temperature = temperature;
             Date = date;
         }
 
-       
+        public Measurments(double temperature)
+        {
+            Temperature = temperature;
+        }
     }
 }

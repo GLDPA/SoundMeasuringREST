@@ -39,32 +39,73 @@ namespace SoundMeasuringREST
             double avg = 0;
             double sum = 0;
                 
-            foreach (var temp in GetAllMeasurments())
+            foreach (var temp in m)
             {
                 sum = sum + temp.Temperature;
             }
-
             avg = sum / m.Count;
+            
             return avg;
         }
 
         public double GetAverageToday()
         {
-            var m = GetAllMeasurments();
+            var m = GetTodaysAverage();
 
             double avg = 0;
             double sum = 0;
 
-            foreach (var temp in GetAllMeasurments())
-            {
-                if (temp.Date == DateTime.Today)
-                {
-                    sum = sum + temp.Temperature;
-                }
-                avg = sum / m.Count;
+            foreach (var temp in m)
+            {               
+                
+              sum = sum + temp.Temperature;
+                
             }
+            avg = sum / m.Count;
             return avg;
         }
+
+        public List<Measurments> GetTodaysAverage()
+        {
+            DateTime date = DateTime.Today;
+            
+            string stringDate = date.ToString();
+            stringDate = DateFix(stringDate);            
+            string sqlQuery = $"SELECT Temperature FROM Measurments WHERE Date = '{stringDate}'";
+            var tempList = new List<Measurments>();
+            using (SqlConnection connection = new SqlConnection (constr))
+            {
+                connection.Open();
+                SqlCommand commandsql = new SqlCommand(sqlQuery, connection);
+                using (SqlDataReader myreader = commandsql.ExecuteReader())
+                {
+                    while (myreader.Read())
+                    {
+                        tempList.Add(new Measurments((double.Parse(myreader["temperature"].ToString().Trim()))));
+                    }
+                } 
+                return tempList;
+            }
+        }
+
+        //public double GetAverageToday()
+        //{
+        //    using (var sqlconnection = new SqlConnection(constr))
+        //    {
+        //        string sqlquery = $"﻿SELECT Date FROM dbo.Measurments WHERE Date = @date" +
+        //        
+                    
+        //        {
+        //            commandsql.Parameters.AddWithValue("@date", DateTime.Today);
+        //            sqlconnection.Open();
+
+        //            int result = commandsql.ExecuteNonQuery();
+
+        //            var todaysTempList = tempMeasurement.Query<Measurments>(sqlQuery).ToList();
+        //            return todaysTempList;
+        //        }
+        //    }
+        //}
 
         public double GetAverageWeek()
         {
@@ -74,14 +115,15 @@ namespace SoundMeasuringREST
             double avg = 0;
             double sum = 0;
 
-            foreach (var temp in GetAllMeasurments())
+            foreach (var temp in m)
             {
-                if (temp.Date == DateTime.Today.AddDays(-7))
+                if (temp.Date >= DateTime.Today.AddDays(-7))
                 {
                      sum = sum + temp.Temperature;
                 }
-                 avg = sum / m.Count;
+                 
             }
+            avg = sum / m.Count;
             return avg;
         }
 
@@ -119,6 +161,28 @@ namespace SoundMeasuringREST
                 return tempList[getCurrentMeasurment];
             }
 
+        }
+
+        private string DateFix(string beginString)
+        {
+            string endString = beginString;
+
+            endString = endString.Remove(10);
+
+            List<string> stringList = new List<string>(endString.Split('-'));
+
+
+            string stringDate = stringList[0];
+            string stringMonth = stringList[1];
+            string stringYear = stringList[2];
+
+            endString = $"{stringYear}-{stringMonth}-{stringDate}";
+
+
+
+
+
+            return endString;
         }
 
 
