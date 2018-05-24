@@ -35,16 +35,53 @@ namespace SoundMeasuringREST
         public double GetAverage()
         {
             var m = GetAllMeasurments();
+            
             double avg = 0;
             double sum = 0;
-
-
+                
             foreach (var temp in GetAllMeasurments())
             {
                 sum = sum + temp.Temperature;
             }
 
             avg = sum / m.Count;
+            return avg;
+        }
+
+        public double GetAverageToday()
+        {
+            var m = GetAllMeasurments();
+
+            double avg = 0;
+            double sum = 0;
+
+            foreach (var temp in GetAllMeasurments())
+            {
+                if (temp.Date == DateTime.Today)
+                {
+                    sum = sum + temp.Temperature;
+                }
+                avg = sum / m.Count;
+            }
+            return avg;
+        }
+
+        public double GetAverageWeek()
+        {
+            
+            var m = GetAllMeasurments();
+
+            double avg = 0;
+            double sum = 0;
+
+            foreach (var temp in GetAllMeasurments())
+            {
+                if (temp.Date == DateTime.Today.AddDays(-7))
+                {
+                     sum = sum + temp.Temperature;
+                }
+                 avg = sum / m.Count;
+            }
             return avg;
         }
 

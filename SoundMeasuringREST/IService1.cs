@@ -26,6 +26,16 @@ namespace SoundMeasuringREST
 
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "GetAverageToday/")]
+        double GetAverageToday();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "GetAverageWeek/")]
+        double GetAverageWeek();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "Current/")]
         Measurments CurrentMeasurment();
 
