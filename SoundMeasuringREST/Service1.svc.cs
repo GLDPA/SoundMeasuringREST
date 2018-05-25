@@ -48,6 +48,8 @@ namespace SoundMeasuringREST
             return avg;
         }
 
+       
+
         public double GetAverageToday()
         {
             var m = GetAllMeasurments();
@@ -122,7 +124,38 @@ namespace SoundMeasuringREST
         }
 
 
-        
+        public bool PostData(string temperature)
+        {
+            var Date = DateTime.Now.ToShortTimeString();
+            var average = GetAverage();
+            if (Date == null || temperature == null)
+            {
+                throw new ArgumentException("Cannot insert null");
+            }
+
+            var connectionstring =
+                "Server=tcp:davids-sql-server.database.windows.net,1433;Initial Catalog=Davids sql server;Persist Security Info=False;User ID=davidmalmberg;Password=Dak/Tha12;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            using (var connection = new SqlConnection(connectionstring))
+            {
+                var sqlQuery = "INSERT INTO [dbo].[measurments] (Date,Temperature, Average) VALUES(@Date, @Temperature, @Average)";
+                using (var command = new SqlCommand(sqlQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Date", Date);
+                    command.Parameters.AddWithValue("@Temperature", double.Parse(temperature));
+                    command.Parameters.AddWithValue("@Average", average);
+
+
+                    connection.Open();
+                    var result = command.ExecuteNonQuery();
+                    if (result < 0)
+                    {
+                        throw new ArgumentException("Nothing inserted");
+                    }
+                    return true;
+                }
+            }
+
+        }
 
 
 

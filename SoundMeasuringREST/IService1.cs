@@ -44,6 +44,9 @@ namespace SoundMeasuringREST
             UriTemplate = "Delete/{id}")]
         bool DeleteMeasurements(string id);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, UriTemplate = "Measurments/")]
+        bool PostData(string temperature);
 
 
     }
