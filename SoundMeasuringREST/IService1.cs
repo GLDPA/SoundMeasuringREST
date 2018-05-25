@@ -48,6 +48,9 @@ namespace SoundMeasuringREST
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, UriTemplate = "Measurments/")]
         bool PostData(string temperature);
 
+        [OperationContract]
+        [WebInvoke(Method = "PUT", RequestFormat = WebMessageFormat.Json, UriTemplate = "UpdateTemp/")]
+        Measurments UpdateMeasurents(Measurments temperature);
 
     }
 }

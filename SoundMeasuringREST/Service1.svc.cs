@@ -157,6 +157,22 @@ namespace SoundMeasuringREST
 
         }
 
+        public Measurments UpdateMeasurents(Measurments temperature)
+        {
+            using (var connection = new SqlConnection(constr))
+            {
+                string sqlQuery = $"UPDATE Temperature WHERE @Id=Id";
+
+                using (SqlCommand commander = new SqlCommand(sqlQuery,connection))
+                {
+                    commander.Parameters.AddWithValue("@Id", temperature.Id);
+                    
+                    connection.Open();
+
+                    return temperature;
+                }
+            }
+        }
 
 
     }
