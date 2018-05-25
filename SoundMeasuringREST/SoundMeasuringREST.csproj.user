@@ -9,8 +9,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
-    <ProjectView>ShowAllFiles</ProjectView>
-    <NameOfLastUsedPublishProfile>SoundMeasuringREST20180522031835 - Web Deploy</NameOfLastUsedPublishProfile>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
